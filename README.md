@@ -1,4 +1,5 @@
 # DOTT: DevOps Test Task XD :D
+# Te quiero mucho
 Hola amigo
 Welcome to DOTT.
 
@@ -82,8 +83,3 @@ curl localhost/ip-validation?value=255.255.0.0
 
 ### Task Organization
 - [ ] Kanban (Trello.com)
-
-XDDDDDDDD hola
-un saludo
-:DD
-HOLA
