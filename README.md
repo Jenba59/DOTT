@@ -1,4 +1,4 @@
-# DOTT: DevOps Test Task :O
+# DOTT: DevOps Test Task XD
 
 Welcome to DOTT.
 
