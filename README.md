@@ -1,6 +1,4 @@
-# DOTT: DevOps Test Task XD
-# Te quiero mucho hola
-Hola amigo
+# DOTT: DevOps Test Task :D
 Welcome to DOTT.
 
 This repository contains an API skeleton where you can add your code,
