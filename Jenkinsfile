@@ -1,4 +1,3 @@
-cat <<-'JENKINSFILE' > Jenkinsfile
 pipeline {
   agent { docker { image 'ruby:3.0.0' } }
   stages {
@@ -19,4 +18,3 @@ pipeline {
     }
   }
 }
-JENKINSFILE
