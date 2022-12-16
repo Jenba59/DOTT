@@ -8,7 +8,7 @@ pipeline {
         sh 'COPY Gemfile .'
         sh 'RUN gem install bundler && bundle install'
         sh 'COPY . .'
-        sh 'CMD ["ash", "-c", "ruby api.rb"]
+        sh 'CMD ["ash", "-c", "ruby api.rb"]'
       }
     }
   }
