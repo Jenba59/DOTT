@@ -14,11 +14,6 @@ pipeline {
         sh 'ruby Hello.rb'
       }
     }
-    stage ('Dockerfile') {
-      steps {
-        sh 'Dockerfile'
-      }
-    }
     stage ('API') {
       steps {
         sh 'ruby api.rb'
