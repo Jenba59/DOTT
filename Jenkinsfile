@@ -1,5 +1,6 @@
 pipeline {
   agent any
+  agent {dockerfile true}
   stages {
     stage ('version') {
       steps {
@@ -11,9 +12,9 @@ pipeline {
         sh 'ruby Hello.rb'
       }
     }
-    stage ('Gemfile') {
+    stage ('Dockerfile') {
       steps {
-        sh 'ruby Gemfile'
+        sh 'Dockerfile'
       }
     }
     stage ('API') {
