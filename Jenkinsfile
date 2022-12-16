@@ -12,7 +12,7 @@ pipeline {
                     sh '''${scannerHome}/bin/sonar-scanner \
                         -Dsonar.organization=Jenba59 \
                         -Dsonar.projectKey=PONDIO \
-                        -Dsonar.sources=./cidr_convert_api/go/ \
+                        -Dsonar.sources=./cidr_convert_api/ruby/ \
                         -Dsonar.host.url=https://sonarcloud.io
                     '''
                 }
