@@ -14,10 +14,11 @@ pipeline {
     stage('SonarCloud Analysis') {
       steps{
                 withSonarQubeEnv('SonarCloud') {
-                  step{
-                    def scannerHome = tool 'SonarScanner 4.0';
+                  step{ def scannerHome = tool 'SonarScanner 4.0';
+                      }
                   withSonarQubeEnv('My SonarQube Server')
-                  sh "${scannerHome} /bin/sonar-scanner"
+                  step{
+                    sh "${scannerHome} /bin/sonar-scanner"
                 }
                 }
       }
