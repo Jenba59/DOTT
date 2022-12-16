@@ -11,9 +11,6 @@ agent { docker { image 'ruby:3.0.0p0' } }
         sh 'bundle install'
       }
     }
-    stage('test') {
-      steps {
-      }   
     }
   }
 }
