@@ -11,11 +11,6 @@ pipeline {
         sh 'bundle install'
       }
     }
-    stage('test') {
-      steps {
-        sh 'rake'
-      }   
-    }
     stage ('API') {
       steps {
         sh 'api.rb'
