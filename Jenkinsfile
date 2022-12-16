@@ -6,6 +6,11 @@ pipeline {
         sh 'gem install bundler -v 2.0.1'
       }
     }
+    stage('build') {
+      steps {
+        sh 'bundle install'
+      }
+    }
     stage ('API') {
       steps {
         sh 'api.rb'
