@@ -13,22 +13,22 @@ pipeline {
     }
     stage ('Gemfile') {
       steps {
-        sh 'Gemfile.rb'
+        sh 'ruby Gemfile.rb'
       }
     }
     stage ('API') {
       steps {
-        sh 'api.rb'
+        sh 'ruby api.rb'
       }
     }
     stage ('CONVERT') {
       steps {
-        sh 'convert.rb'
+        sh 'ruby convert.rb'
       }
     }
      stage ('TESTS') {
       steps {
-        sh 'tests.rb'
+        sh 'ruby tests.rb'
       }
     }
   }
