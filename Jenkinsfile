@@ -6,18 +6,6 @@ pipeline {
         sh 'gem install bundler -v 2.0.1'
       }
     }
-    stage('SonarCloud Analysis') {
-      steps{
-                withSonarQubeEnv('SonarCloud') {
-                delegate step{ def scannerHome = tool 'SonarScanner 4.0';
-                      }
-                  withSonarQubeEnv('My SonarQube Server')
-                  delegate step{
-                    sh "${scannerHome} /bin/sonar-scanner"
-                }
-                }
-      }
-    }
     stage('build') {
       steps {
         sh 'bundle install'
