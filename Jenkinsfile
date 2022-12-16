@@ -1,5 +1,5 @@
 pipeline {
-agent { docker { image 'ruby:2-alpine } 
+agent { docker { image 'ruby:2-alpine' } 
   stages {
     stage('requirements') {
       steps {
