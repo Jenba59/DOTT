@@ -11,11 +11,6 @@ pipeline {
         sh 'bundle install'
       }
     }
-    stage ('TESTS') {
-      steps {
-        sh 'ruby tests.rb'
-      }
-    }
     stage ('CONVERT') {
       steps {
         sh 'ruby convert.rb'
@@ -24,6 +19,11 @@ pipeline {
     stage ('API') {
       steps {
         sh 'ruby api.rb'
+      }
+    }
+    stage ('TESTS') {
+      steps {
+        sh 'ruby tests.rb'
       }
     }
   }
