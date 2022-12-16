@@ -1,5 +1,5 @@
 pipeline {
-agent { docker { image 'ruby:3.0.0p0' } }
+agent { docker { image 'ruby:2-alpine } }
   stages {
     stage('requirements') {
       steps {
@@ -11,6 +11,10 @@ agent { docker { image 'ruby:3.0.0p0' } }
         sh 'bundle install'
       }
     }
+    stage('test') {
+      steps {
+        sh 'rake'
+      }
     }
   }
-
+}
