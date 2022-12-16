@@ -1,8 +1,7 @@
 pipeline {
   agent { dockerfile true }
-  {
     stages {
-    stage ('Dockerfile') {
+     stage ('Dockerfile') {
       sh 'FROM ruby:2-alpine'
       sh 'WORKDIR /app'
       sh 'COPY Gemfile.'
