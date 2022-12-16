@@ -10,11 +10,13 @@ pipeline {
       git 'https://github.com/Jenba59/DOTT.git'
     }
     stage('SonarCloud Analysis') {
+      steps{
                 withSonarQubeEnv('SonarCloud') {
                     def scannerHome = tool 'SonarScanner 4.0';
                   withSonarQubeEnv('My SonarQube Server')
                   sh "${scannerHome} /bin/sonar-scanner"
                 }
+      }
     }
     stage('build') {
       steps {
