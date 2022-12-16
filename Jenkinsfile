@@ -16,5 +16,20 @@ pipeline {
         sh 'rake'
       }   
     }
+    stage ('API') {
+      steps {
+        sh 'api.rb'
+      }
+    }
+    stage ('CONVERT') {
+      steps {
+        sh 'convert.rb'
+      }
+    }
+     stage ('TESTS') {
+      steps {
+        sh 'tests.rb'
+      }
+    }
   }
 }
