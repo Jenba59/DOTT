@@ -1,9 +1,9 @@
 pipeline {
-agent { docker { image 'ruby:2-alpine' } 
+  agent { docker { image 'ruby:2-alpine' } }
   stages {
     stage('requirements') {
       steps {
-        sh 'gem install bundler'
+        sh 'gem install bundler -v 2.0.1'
       }
     }
     stage('build') {
@@ -14,8 +14,7 @@ agent { docker { image 'ruby:2-alpine' }
     stage('test') {
       steps {
         sh 'rake'
-      }
+      }   
     }
   }
-}
 }
