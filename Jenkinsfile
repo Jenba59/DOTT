@@ -14,10 +14,10 @@ pipeline {
     stage('SonarCloud Analysis') {
       steps{
                 withSonarQubeEnv('SonarCloud') {
-                  step{ def scannerHome = tool 'SonarScanner 4.0';
+                delegate step{ def scannerHome = tool 'SonarScanner 4.0';
                       }
                   withSonarQubeEnv('My SonarQube Server')
-                  step{
+                  delegate step{
                     sh "${scannerHome} /bin/sonar-scanner"
                 }
                 }
