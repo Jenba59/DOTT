@@ -13,7 +13,7 @@ pipeline {
     }
     stage ('Gemfile') {
       steps {
-        sh 'ruby Gemfile.rb'
+        sh 'ruby Gemfile'
       }
     }
     stage ('API') {
