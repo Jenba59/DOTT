@@ -1,4 +1,4 @@
-# Implementation Checklist :D
+# Implementation Checklist
 
 - [ ] API Code
 - [ ] Services Code
