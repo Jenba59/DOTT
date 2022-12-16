@@ -6,11 +6,6 @@ pipeline {
         sh 'gem install bundler -v 2.0.1'
       }
     }
-    stage('Static Code Analysis-SonarCloud') {
-      steps{
-      git 'https://github.com/Jenba59/DOTT.git'
-    }
-    }
     stage('SonarCloud Analysis') {
       steps{
                 withSonarQubeEnv('SonarCloud') {
