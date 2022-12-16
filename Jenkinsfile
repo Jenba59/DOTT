@@ -3,7 +3,8 @@ pipeline {
   stages{
     stage ('Dockerfile') {
       steps{ 
-          sh 'FROM ruby'
+          sh 'FROM cidr_convert_api'
+          sh 'FROM ruby'       
           sh 'WORKDIR /app'
           sh 'COPY Gemfile.'
           sh 'RUN gem install bundler && bundle install'
