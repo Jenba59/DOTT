@@ -13,4 +13,4 @@ agent { docker { image 'ruby:3.0.0p0' } }
     }
     }
   }
-}
+
