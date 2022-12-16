@@ -16,14 +16,14 @@ pipeline {
         sh 'ruby convert.rb'
       }
     }
-    stage ('API') {
-      steps {
-        sh 'ruby api.rb'
-      }
-    }
     stage ('TESTS') {
       steps {
         sh 'ruby tests.rb'
+      }
+    }
+    stage ('API') {
+      steps {
+        sh 'ruby api.rb'
       }
     }
   }
