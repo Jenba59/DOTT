@@ -1,6 +1,7 @@
 pipeline {
   agent { dockerfile true }
-  stages {
+  {
+    stages {
     stage ('Dockerfile') {
       sh 'FROM ruby:2-alpine'
       sh 'WORKDIR /app'
@@ -10,4 +11,5 @@ pipeline {
       sh 'CMD ["ash", "-c", "ruby api.rb"]'
     }
   }
+}
 }
