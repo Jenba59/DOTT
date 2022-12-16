@@ -3,7 +3,7 @@ pipeline {
   stages{
     stage ('Dockerfile') {
       steps{
-          sh 'FROM ruby 3.0.0p0'
+          sh 'FROM ruby-3.0.0'
           sh 'WORKDIR /app'
           sh 'COPY Gemfile.'
           sh 'RUN gem install bundler && bundle install'
