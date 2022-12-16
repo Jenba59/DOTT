@@ -11,11 +11,6 @@ pipeline {
         sh 'ruby Hello.rb'
       }
     }
-    stage ('Gemfile') {
-      steps {
-        sh 'ruby Gemfile'
-      }
-    }
     stage ('API') {
       steps {
         sh 'ruby api.rb'
