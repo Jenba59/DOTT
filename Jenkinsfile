@@ -6,18 +6,16 @@ pipeline {
         sh 'gem install bundler -v 2.0.1'
       }
     }
-    stage('Static Code Analysis SonarCloud') {
-      steps {
+    stage('Static Code Analysis-SonarCloud') {
+      git 'https://github.com/Jenba59/DOTT.git'
+    }
+    stage('SonarCloud Analysis') {
                 withSonarQubeEnv('SonarCloud') {
-                    sh '''${scannerHome}/bin/sonar-scanner \
-                        -Dsonar.organization=Jenba59 \
-                        -Dsonar.projectKey=PONDIO \
-                        -Dsonar.sources=./cidr_convert_api/ruby/ \
-                        -Dsonar.host.url=https://sonarcloud.io
-                    '''
+                    def scannerHome = tool 'SonarScanner 4.0';
+                  withSonarQubeEnv('My SonarQube Server')
+                  sh "${scannerHome}/bin/sonar-scanner
                 }
-            }
-        }
+    }
     stage('build') {
       steps {
         sh 'bundle install'
