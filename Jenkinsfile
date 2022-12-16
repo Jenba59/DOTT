@@ -2,14 +2,18 @@ pipeline {
   agent {dockerfile true}
   stages{
     stage ('Dockerfile') {
-      steps{
-          sh 'FROM jenkins'
-          sh 'FROM ruby'
-          sh 'WORKDIR /app'
-          sh 'COPY Gemfile.'
-          sh 'RUN gem install bundler && bundle install'
-          sh 'COPY . .'
-          sh 'CMD ["ash", "-c", "ruby api.rb"]'
+      steps{ 
+sh 'gem install bundler'
+sh 'cat <<-'PACKAGE_MANIFEST' > Gemfile'
+sh 'source "https://rubygems.org"'
+sh 'gem 'sinatra''
+sh 'gem 'sinatra-contrib''
+sh 'group :test do'
+  sh 'gem 'rack-test''
+  sh 'gem 'ci_reporter_test_unit''
+sh 'end'
+sh 'PACKAGE_MANIFEST'
+sh 'bundle install'
       }
     }
   }
