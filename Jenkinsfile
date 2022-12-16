@@ -1,5 +1,5 @@
 pipeline {
-agent { docker { image 'ruby:2.6.1' } }
+agent { docker { image 'ruby:3.0.0p0' } }
   stages {
     stage('requirements') {
       steps {
@@ -13,7 +13,6 @@ agent { docker { image 'ruby:2.6.1' } }
     }
     stage('test') {
       steps {
-        sh 'rake'
       }   
     }
   }
