@@ -18,3 +18,4 @@ agent { docker { image 'ruby:2-alpine' }
     }
   }
 }
+}
