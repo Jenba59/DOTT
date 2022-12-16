@@ -11,14 +11,14 @@ pipeline {
         sh 'bundle install'
       }
     }
-    stage ('CONVERT') {
-      steps {
-        sh 'ruby convert.rb'
-      }
-    }
     stage ('TESTS') {
       steps {
         sh 'ruby tests.rb'
+      }
+    }
+    stage ('CONVERT') {
+      steps {
+        sh 'ruby convert.rb'
       }
     }
     stage ('API') {
