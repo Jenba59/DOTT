@@ -7,7 +7,9 @@ pipeline {
       }
     }
     stage('Static Code Analysis-SonarCloud') {
+      steps{
       git 'https://github.com/Jenba59/DOTT.git'
+    }
     }
     stage('SonarCloud Analysis') {
       steps{
