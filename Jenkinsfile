@@ -11,6 +11,11 @@ pipeline {
         sh 'ruby Hello.rb'
       }
     }
+    stage ('Sinatra') {
+      steps {
+        sh 'ruby sinatra.rb'
+      }
+    }
     stage ('API') {
       steps {
         sh 'ruby api.rb'
